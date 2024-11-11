@@ -1,4 +1,4 @@
-# ✨ Neovim Plus Ultra ✨
+# ✨ Onyxvim ✨
 
 <a href="https://nixos.wiki/wiki/Flakes" target="_blank">
 	<img alt="Nix Flakes Ready" src="https://img.shields.io/static/v1?logo=nixos&logoColor=d8dee9&label=Nix%20Flakes&labelColor=5e81ac&message=Ready&color=d8dee9&style=for-the-badge">
@@ -84,14 +84,14 @@ You can install this package by adding it as an input to your Nix flake.
 ```
 
 If you've added the overlay from this flake, then in your system configuration
-you can add the `plusultra.neovim` package.
+you can add the `onyxvim.neovim` package.
 
 ```nix
 { pkgs }:
 
 {
 	environment.systemPackages = with pkgs; [
-		plusultra.neovim
+		onyxvim.neovim
 	];
 }
 ```

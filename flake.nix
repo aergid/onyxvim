@@ -21,10 +21,6 @@
     };
   };
 
-  # TODO: a todo
-  # NOTE: a note
-  # WARN: a warning
-  # HACK: a hack
   outputs =
     inputs:
     inputs.snowfall-lib.mkFlake {
@@ -33,7 +29,7 @@
       src = ./.;
 
       snowfall = {
-        namespace = "plusultra";
+        namespace = "onyx";
       };
 
       channels-config.allowUnfree = true;
