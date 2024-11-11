@@ -1,8 +1,6 @@
 { lib
 , pkgs
 , inputs
-, neovim-settings ? { }
-, neovim-config ? { }
 , ...
 }:
 let
@@ -43,12 +41,19 @@ let
       config = lib.mkMerge [
         {
           _module.args = {
-            settings = neovim-settings;
             lib = lib.mkForce lib;
+            pkgs = lib.mkForce pkgs;
           };
         }
-
-        neovim-config
+        {
+          plugins.airline.enable = true;
+          ui = {
+            alpha.enable = lib.mkDefault true;
+            barbecue.enable = true;
+            indent-blankline.enable = true;
+            web-devicons.enable = true;
+          };
+        }
       ];
     };
   };

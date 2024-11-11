@@ -7,7 +7,7 @@
 
     nixvim = {
       url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     snowfall-lib = {
@@ -36,6 +36,7 @@
 
       alias.packages.default = "neovim";
 
+      # adds pkgs.nixvim
       overlays = with inputs; [ nixvim.overlays.default ];
 
       outputs-builder = channels: {

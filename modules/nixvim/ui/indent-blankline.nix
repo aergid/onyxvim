@@ -1,9 +1,9 @@
 { lib, config, ... }:
 {
   options = {
-    indent-blankline.enable = lib.mkEnableOption "Enable indent-blankline module";
+    ui.indent-blankline.enable = lib.mkEnableOption "Enable indent-blankline module";
   };
-  config = lib.mkIf config.indent-blankline.enable {
+  config = lib.mkIf config.ui.indent-blankline.enable {
 
     plugins = {
       indent-blankline = {

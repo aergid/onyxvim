@@ -6,9 +6,9 @@
 }:
 {
   options = {
-    dressing-nvim.enable = lib.mkEnableOption "Enable dressing-nvim module";
+    ui.dressing-nvim.enable = lib.mkEnableOption "Enable dressing-nvim module";
   };
-  config = lib.mkIf config.dressing-nvim.enable {
+  config = lib.mkIf config.ui.dressing-nvim.enable {
 
     extraPlugins = with pkgs.vimPlugins; [
       dressing-nvim

@@ -1,15 +1,21 @@
-{ lib, config, ... }:
 {
+lib,
+config,
+...
+}:
+with lib; let
+  cfg = config.ui.barbecue;
+in {
   options = {
-    barbecue.enable = lib.mkEnableOption "Enable barbecue module";
+    ui.barbecue.enable = mkEnableOption "Enable barbecue module";
   };
-  config = lib.mkIf config.barbecue.enable {
+  config = mkIf cfg.enable {
     plugins.barbecue = {
       enable = true;
-      settings = {
-        create_autocmd = false;
-        theme = "auto";
-      };
+      # settings = {
+      #   create_autocmd = false;
+      #   theme = "auto";
+      # };
     };
     extraConfigLua = ''
       vim.api.nvim_create_autocmd({

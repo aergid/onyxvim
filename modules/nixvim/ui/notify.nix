@@ -1,9 +1,9 @@
 { lib, config, ... }:
 {
   options = {
-    notify.enable = lib.mkEnableOption "Enable notify module";
+    ui.notify.enable = lib.mkEnableOption "Enable notify module";
   };
-  config = lib.mkIf config.notify.enable {
+  config = lib.mkIf config.ui.notify.enable {
     plugins.notify = {
       enable = true;
       backgroundColour = "#000000";

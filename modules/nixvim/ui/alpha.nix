@@ -1,9 +1,16 @@
-{ lib, config, ... }:
 {
-  options = {
-    alpha.enable = lib.mkEnableOption "Enable alpha module";
-  };
-  config = lib.mkIf config.alpha.enable {
+  lib,
+  config,
+  ...
+}:
+with lib; let
+  cfg = config.ui.alpha;
+in {
+    options.ui.alpha = {
+      enable = mkEnableOption "Enable alpha";
+    };
+
+  config = mkIf cfg.enable {
     plugins.alpha = {
       enable = true;
       theme = null;

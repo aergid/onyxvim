@@ -1,9 +1,9 @@
 { lib, config, ... }:
 {
   options = {
-    noice.enable = lib.mkEnableOption "Enable noice module";
+    ui.noice.enable = lib.mkEnableOption "Enable noice module";
   };
-  config = lib.mkIf config.noice.enable {
+  config = lib.mkIf config.ui.noice.enable {
     plugins.noice = {
       enable = true;
       notify = {
