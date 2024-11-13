@@ -7,7 +7,6 @@
   luaLoader.enable = true;
 
   ui = {
-    alpha.enable = lib.mkDefault true;
     barbecue.enable = true;
     indent-blankline.enable = true;
     web-devicons.enable = false;
