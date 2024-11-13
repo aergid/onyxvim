@@ -1,3 +1,5 @@
+# winbar that uses nvim-navic in order to get LSP context from your language server.
+# https://github.com/utilyre/barbecue.nvim
 {
 lib,
 config,
