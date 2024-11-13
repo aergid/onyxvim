@@ -5,44 +5,61 @@
   };
 
   opts = {
-    # smartindent = true;
-    breakindent = true;
-    cursorline = true;
+    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
+    updatetime = 50; # Faster completion
 
-    tabstop = 2;
-    shiftwidth = 2;
+    # diff related
+    diffopt="internal,filler,closeoff,algorithm:patience,linematch:60";
+    # TODO: add scrollbind in autoCmd for diff views
+    # scrollbind = true;
 
-    wrap = true;
+
+    # Tab and lines options
+    tabstop = 2; # Number of spaces a <Tab> in the text stands for (local to buffer)
+    shiftwidth = 2; # Number of spaces used for each step of (auto)indent (local to buffer)
+    expandtab = true; # Expand <Tab> to spaces in Insert mode (local to buffer)
+    wrap = false;
     linebreak = true;
+    breakindent = true;
+    textwidth = 0; # Maximum width of text that is being inserted.  A longer line will be broken after white space to get this width.
+    autoindent = true; # Do clever autoindenting
 
-    number = true;
-    relativenumber = true;
-
-    signcolumn = "yes:1";
-
-    mouse = "";
-
+    # Folding
     foldcolumn = "0";
     foldlevel = 99;
     foldlevelstart = 99;
     foldenable = true;
 
-    updatetime = 50;
+    # Line numbers
+    relativenumber = true;
+    number = true;
+    hidden = true; # Keep closed buffer open in the background
+    mouse = "a"; # Enable mouse control
+    mousemodel = "extend"; # Mouse right-click extends the current selection
+    splitbelow = true; # A new window is put below the current one
+    splitright = true; # A new window is put right of the current one
 
-    swapfile = false;
+    swapfile = false; # Disable the swap file
+    modeline = true; # Tags such as 'vim:ft=sh'
+    modelines = 100; # Sets the type of modelines
+    undofile = true; # Automatically save and restore undo history
     backup = false;
-    undofile = true;
 
-    termguicolors = true;
+    incsearch = true; # Incremental search: show match for partly typed search command
+    inccommand = "split"; # Search and replace: preview changes in quickfix list
+    ignorecase = true; # When the search query is lower-case, match both lower and upper-case patterns
+    smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper case characters
 
-    ignorecase = true;
-    smartcase = true;
+    scrolloff = 6; # Number of screen lines to show around the cursor
+    cursorline = false; # Highlight the screen line of the cursor
+    cursorcolumn = false; # Highlight the screen column of the cursor
+    signcolumn = "number"; # Whether to show the signcolumn
+    # signcolumn = "yes:1";
+    colorcolumn = "0"; # Columns to highlight
+    laststatus = 3; # When to use a status line for the last window
+    fileencoding = "utf-8"; # File-content encoding for the current buffer
+    termguicolors = true; # Enables 24-bit RGB color in the |TUI|
+    spell = false; # Highlight spelling mistakes (local to window)
 
-    splitbelow = true;
-    splitright = true;
-
-    scrolloff = 4;
-
-    laststatus = 3;
   };
 }
