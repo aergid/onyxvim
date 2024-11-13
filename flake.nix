@@ -29,7 +29,7 @@
       src = ./.;
 
       snowfall = {
-        namespace = "onyx";
+        namespace = "onyxvim";
       };
 
       channels-config.allowUnfree = true;

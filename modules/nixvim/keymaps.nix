@@ -1,58 +1,33 @@
-{
-  keymaps = [
+{ lib, ... }:
+let
+  normal = [
     {
-      mode = "n";
       key = "<leader>ch";
       action = "<cmd>noh<cr>";
-      options = {
-        silent = true;
-        desc = "Clear highlight";
-      };
+      options.desc = "Clear highlight";
     }
     {
-      mode = "n";
       key = "<leader>cs";
       action = ''<cmd>let @/=""<cr>'';
-      options = {
-        silent = true;
-        desc = "Clear search";
-      };
+      options.desc = "Clear search";
     }
     {
-      mode = "n";
       key = "<leader>bd";
       action = "<cmd>:BD<cr>";
-      options = {
-        silent = true;
-        desc = "Delete buffer";
-      };
+      options.desc = "Next buffer";
     }
     {
-      mode = "n";
-      key = "<leader>bn";
-      action = "<cmd>:bnext<cr>";
-      options = {
-        silent = true;
-        desc = "Next buffer";
-      };
-    }
-    {
-      mode = "n";
       key = "<leader>bp";
       action = "<cmd>:bprevious<cr>";
-      options = {
-        silent = true;
-        desc = "Previous buffer";
-      };
+      options.desc = "Previous buffer";
     }
     {
-      mode = "t";
       key = "<C-o>";
       action = ''<C-\><C-n>'';
-      options = {
-        silent = true;
-        desc = "Exit terminal mode";
-      };
+      options.desc = "Exit terminal mode";
     }
   ];
+in
+{
+  keymaps = lib.onyxvim.keymaps.silent normal;
 }
