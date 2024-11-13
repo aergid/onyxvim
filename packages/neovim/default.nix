@@ -4,7 +4,7 @@
 , ...
 }:
 let
-  raw-modules = lib.snowfall.fs.get-default-nix-files-recursive (
+  raw-modules = lib.snowfall.fs.get-nix-files-recursive (
     lib.snowfall.fs.get-file "/modules/nixvim"
   );
 
@@ -43,15 +43,6 @@ let
           _module.args = {
             lib = lib.mkForce lib;
             pkgs = lib.mkForce pkgs;
-          };
-        }
-        {
-          plugins.airline.enable = true;
-          ui = {
-            alpha.enable = lib.mkDefault true;
-            barbecue.enable = true;
-            indent-blankline.enable = true;
-            web-devicons.enable = true;
           };
         }
       ];

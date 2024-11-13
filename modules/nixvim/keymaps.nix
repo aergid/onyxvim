@@ -1,5 +1,7 @@
 { lib, ... }:
 let
+  mkKeymaps = lib.onyxvim.keymaps.silent;
+
   normal = [
     {
       key = "<leader>ch";
@@ -29,5 +31,5 @@ let
   ];
 in
 {
-  keymaps = lib.onyxvim.keymaps.silent normal;
+  keymaps = mkKeymaps.normal normal;
 }
