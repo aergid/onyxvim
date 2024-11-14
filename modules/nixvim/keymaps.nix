@@ -1,4 +1,3 @@
-{ lib, ... }:
 {
   globals = {
     mapleader = " ";
@@ -45,7 +44,7 @@
     }
     {
       mode = "n";
-      key = "<leader>td";
+      key = "<leader>tc";
       action = "<cmd>tabclose<cr>";
       options = {
         silent = true;
@@ -68,6 +67,68 @@
     # C-w-v -split vertical
     # C-w-x -eXchange aka swap
     # C-w-c - close
+    {
+      mode = "n";
+      key = "<C-Left>";
+      action = ":wincmd h<CR>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<C-Right>";
+      action = ":wincmd l<CR>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<C-Down>";
+      action = ":wincmd j<CR>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<C-Up>";
+      action = ":wincmd k<CR>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<S-Up>";
+      action = ":resize -2<CR>";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<S-Down>";
+      action = ":resize +2<CR>";
+      options = {
+        silent = true;
+      };
+    }{
+      mode = "n";
+      key = "<S-Left>";
+      action = ":vertical resize +2<CR>";
+      options = {
+        silent = true;
+      };
+    }{
+      mode = "n";
+      key = "<S-Right>";
+      action = ":vertical resize -2<CR>";
+      options = {
+        silent = true;
+      };
+    }
 
     # Buffers
     {
@@ -139,6 +200,7 @@
       key = "<leader>uh";
       action = ":lua ToggleInlayHints()<cr>";
       options = {
+        silent = true;
         desc = "Toggle Inlay Hints";
       };
     }
@@ -149,5 +211,56 @@
       key = "<Esc>";
       action = "<cmd>nohlsearch<CR>";
     }
+
+    {
+      mode = ["n" "v"];
+      key = ">";
+      action = ">gv";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = ["n" "v"];
+      key = "<";
+      action = "<gv";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "v";
+      key = "<TAB>";
+      action = ">gv";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "v";
+      key = "<S-TAB>";
+      action = "<gv";
+      options = {
+        silent = true;
+      };
+    }
+
+    {
+      mode = "v";
+      key = "<S-Up>";
+      action =  ":m '<-2<CR>gv=gv";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "v";
+      key = "<S-Down>";
+      action = ":m '>+1<CR>gv=gv";
+      options = {
+        silent = true;
+      };
+    }
+
   ];
 }
