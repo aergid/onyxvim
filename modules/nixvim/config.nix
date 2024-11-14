@@ -10,6 +10,7 @@
     barbecue.enable = false;
     indent-blankline.enable = true;
     web-devicons.enable = true;
+    notify.enable = true;
   };
 
   colorscheme = "catppuccin";
