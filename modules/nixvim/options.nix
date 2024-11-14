@@ -1,9 +1,4 @@
 {
-  globals = {
-    mapleader = " ";
-    maplocalleader = " ";
-  };
-
   opts = {
     sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
     updatetime = 50; # Faster completion
@@ -53,8 +48,7 @@
     scrolloff = 6; # Number of screen lines to show around the cursor
     cursorline = false; # Highlight the screen line of the cursor
     cursorcolumn = false; # Highlight the screen column of the cursor
-    signcolumn = "number"; # Whether to show the signcolumn
-    # signcolumn = "yes:1";
+    signcolumn = "yes:1"; # Whether to show the signcolumn
     colorcolumn = "0"; # Columns to highlight
     laststatus = 3; # When to use a status line for the last window
     fileencoding = "utf-8"; # File-content encoding for the current buffer
