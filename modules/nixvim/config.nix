@@ -13,6 +13,10 @@
     notify.enable = true;
   };
 
+  utils = {
+    which-key.enable = true;
+  };
+
   colorscheme = "catppuccin";
   colorschemes = {
     catppuccin = {
