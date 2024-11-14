@@ -1,3 +1,5 @@
+# https://github.com/stevearc/dressing.nvim
+# Tune UI elements
 {
   lib,
   config,
