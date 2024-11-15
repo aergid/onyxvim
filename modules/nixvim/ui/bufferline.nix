@@ -9,7 +9,7 @@
         enable = true;
         settings = {
           options = {
-            separatorStyle = "thick"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin“
+           separator_style = "slant"; # “slant”, “padded_slant”, “slope”, “padded_slope”, “thick”, “thin“
             offsets = [
               {
                 filetype = "neo-tree";
