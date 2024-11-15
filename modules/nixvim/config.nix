@@ -37,6 +37,15 @@
     treesitter-nvim.enable = true;
   };
 
+  lsp = {
+    conform.enable = true;
+    fidget.enable = true;
+    lsp-nvim.enable = true;
+    lspsaga.enable = true;
+    trouble.enable = true;
+    none-ls-nvim.enable = true;
+  };
+
   colorscheme = "catppuccin";
   colorschemes = {
     catppuccin = {

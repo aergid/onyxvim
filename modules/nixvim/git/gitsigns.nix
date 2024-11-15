@@ -2,14 +2,13 @@
 {
   options = {
     git.gitsigns.enable = lib.mkEnableOption "Enable gitsigns module";
-    utils.trouble.enable = lib.mkEnableOption "Enable trouble module";
   };
 
   config = lib.mkIf config.git.gitsigns.enable {
     plugins.gitsigns = {
       enable = true;
       settings = {
-        trouble = (config.utils.trouble.enable == true);
+        trouble = (config.lsp.trouble.enable == true);
         current_line_blame = false;
       };
     };
