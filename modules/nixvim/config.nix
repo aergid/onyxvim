@@ -12,6 +12,7 @@
     indent-blankline.enable = true;
     web-devicons.enable = true;
     notify.enable = true;
+    lualine.enable = true;
   };
 
   utils = {
