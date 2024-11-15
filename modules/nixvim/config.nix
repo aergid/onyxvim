@@ -22,6 +22,7 @@
 
   fs = {
     oil.enable = true;
+    harpoon.enable = true;
     neo-tree.enable = true;
   };
 

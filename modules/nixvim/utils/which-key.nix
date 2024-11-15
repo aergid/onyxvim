@@ -28,22 +28,22 @@
             group = "Add file to Harpoon";
           }
           {
-            __unkeyed-1 = "<leader>hj";
+            __unkeyed-1 = "<leader>hn";
             mode = "n";
             group = "Harpoon File 1";
           }
           {
-            __unkeyed-1 = "<leader>hk";
+            __unkeyed-1 = "<leader>he";
             mode = "n";
             group = "Harpoon File 2";
           }
           {
-            __unkeyed-1 = "<leader>hl";
+            __unkeyed-1 = "<leader>hi";
             mode = "n";
             group = "Harpoon File 3";
           }
           {
-            __unkeyed-1 = "<leader>hm";
+            __unkeyed-1 = "<leader>ho";
             mode = "n";
             group = "Harpoon File 4";
           }
