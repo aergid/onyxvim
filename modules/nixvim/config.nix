@@ -27,6 +27,12 @@
     neo-tree.enable = true;
   };
 
+  git = {
+    neogit.enable = true;
+    gitsigns.enable = true;
+    diffview.enable = true;
+  };
+
   colorscheme = "catppuccin";
   colorschemes = {
     catppuccin = {
