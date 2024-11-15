@@ -65,6 +65,10 @@
           action = "buffers";
           options.desc = "Buffers";
         };
+        "<leader><space>" = {
+          action = "buffers";
+          options.desc = "Buffers";
+        };
         "<C-p>" = {
           action = "git_files";
           options.desc = "Search git files";

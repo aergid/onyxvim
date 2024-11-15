@@ -138,32 +138,6 @@
       };
     }
 
-    # Buffers
-    {
-      key = "<leader>bn";
-      action = ":bnext<CR>";
-      options = {
-        silent = true;
-        desc = "Next buffer";
-      };
-    }
-    {
-      key = "<leader>bp";
-      action = ":bprevious<CR>";
-      options = {
-        silent = true;
-        desc = "Previous buffer";
-      };
-    }
-    {
-      key = "<leader>bl";
-      action = ":b#<CR>";
-      options = {
-        silent = true;
-        desc = "Last buffer";
-      };
-    }
-
     {
       mode = "n";
       key = "<C-s>";
