@@ -15,6 +15,7 @@
 
   utils = {
     which-key.enable = true;
+    telescope-nvim.enable = true;
   };
 
   colorscheme = "catppuccin";
