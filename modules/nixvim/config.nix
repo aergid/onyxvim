@@ -43,7 +43,7 @@
     lsp-nvim.enable = true;
     lspsaga.enable = true;
     trouble.enable = true;
-    none-ls-nvim.enable = true;
+    none-ls-nvim.enable = false;
   };
 
   colorscheme = "catppuccin";
