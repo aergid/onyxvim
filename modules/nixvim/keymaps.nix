@@ -195,7 +195,7 @@
     }
 
     {
-      mode = ["n" "v"];
+      mode = "v";
       key = ">";
       action = ">gv";
       options = {
@@ -203,7 +203,7 @@
       };
     }
     {
-      mode = ["n" "v"];
+      mode = "v";
       key = "<";
       action = "<gv";
       options = {
