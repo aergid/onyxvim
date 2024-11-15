@@ -69,6 +69,14 @@
     # C-w-c - close
     {
       mode = "n";
+      key = "<C-q>";
+      action = "<C-w>c";
+      options = {
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
       key = "<C-Left>";
       action = ":wincmd h<CR>";
       options = {
