@@ -20,6 +20,11 @@
     telescope-nvim.enable = true;
   };
 
+  fs = {
+    oil.enable = true;
+    neo-tree.enable = true;
+  };
+
   colorscheme = "catppuccin";
   colorschemes = {
     catppuccin = {
