@@ -33,6 +33,10 @@
     diffview.enable = true;
   };
 
+  languages = {
+    treesitter-nvim.enable = true;
+  };
+
   colorscheme = "catppuccin";
   colorschemes = {
     catppuccin = {
