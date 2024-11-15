@@ -16,6 +16,33 @@
     keymaps = [
       {
         mode = "n";
+        key = "<leader>gr";
+        action = ":Gitsigns reset_buffer<CR>";
+        options = {
+          silent = true;
+          desc = "Reset buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>gr";
+        action = ":Gitsigns reset_hunk<CR>";
+        options = {
+          silent = true;
+          desc = "Reset hunk";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>gp";
+        action = ":Gitsigns preview_hunk_inline<CR>";
+        options = {
+          silent = true;
+          desc = "Preview hunk";
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>ud";
         action = ":Gitsigns toggle_deleted<CR>";
         options = {
