@@ -3,7 +3,7 @@
     enable = true;
 
     settings = {
-      highliht = true;
+      highlight = true;
       separator = "  ";
       lsp = {
         auto_attach = true;
