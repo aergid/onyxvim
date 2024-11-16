@@ -8,7 +8,8 @@
 
   ui = {
     barbecue.enable = false;
-    bufferline.enable = true;
+    bufferline.enable = false;
+    barbar.enable = true;
     indent-blankline.enable = true;
     web-devicons.enable = true;
     notify.enable = true;
