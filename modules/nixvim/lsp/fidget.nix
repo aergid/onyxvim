@@ -1,10 +1,15 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  ...
+}:
+# Shows lsp progress in lower right corner
+# https://github.com/j-hui/fidget.nvim
 {
   options = {
     lsp.fidget.enable = lib.mkEnableOption "Enable fidget module";
   };
   config = lib.mkIf config.lsp.fidget.enable {
-
     plugins.fidget = {
       enable = true;
       logger = {
@@ -18,6 +23,7 @@
         ignoreEmptyMessage = false; # Ignore new tasks that don't contain a message
         clearOnDetach =
           # Clear notification group when LSP server detaches
+          # Lua
           ''
             function(client_id)
               local client = vim.lsp.get_client_by_id(client_id)
@@ -26,10 +32,11 @@
           '';
         notificationGroup =
           # How to get a progress message's notification group key
+          # Lua
           ''
             function(msg) return msg.lsp_client.name end
           '';
-        ignore = [ ]; # List of LSP servers to ignore
+        ignore = []; # List of LSP servers to ignore
         lsp = {
           progressRingbufSize = 0; # Configure the nvim's LSP progress ring buffer size
         };

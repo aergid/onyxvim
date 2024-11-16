@@ -1,5 +1,8 @@
-{ pkgs, lib,  ... }:
 {
+  pkgs,
+  lib,
+  ...
+}: {
   vimAlias = true;
   withNodeJs = true;
   withRuby = true;
@@ -58,7 +61,7 @@
         integrations = {
           cmp = true;
           gitsigns = true;
-          indent_blankline = { enabled = true; };
+          indent_blankline = {enabled = true;};
           leap = true;
           lsp_trouble = true;
           treesitter = true;
@@ -67,13 +70,16 @@
           native_lsp = {
             enabled = true;
             underlines = {
-              errors = [  "undercurl" ];
-              hints = [  "undercurl" ];
-              warnings = [  "undercurl" ];
-              information = [  "undercurl" ];
+              errors = ["undercurl"];
+              hints = ["undercurl"];
+              warnings = ["undercurl"];
+              information = ["undercurl"];
             };
           };
-          navic = { enabled = true; custom_bg = "lualine"; };
+          navic = {
+            enabled = true;
+            custom_bg = "lualine";
+          };
           neotest = true;
           neotree = true;
           noice = true;
@@ -91,8 +97,6 @@
     };
   };
 
-
   extraPlugins = with pkgs.vimPlugins; [
   ];
-
 }
