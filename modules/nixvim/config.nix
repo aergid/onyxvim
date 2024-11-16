@@ -51,6 +51,11 @@
     none-ls-nvim.enable = false;
   };
 
+  completion = {
+    cmp.enable = true;
+    lspkind.enable = true;
+  };
+
   colorscheme = "catppuccin";
   colorschemes = {
     catppuccin = {
