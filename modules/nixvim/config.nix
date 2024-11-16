@@ -20,6 +20,7 @@
     auto-session.enable = true;
     which-key.enable = true;
     telescope-nvim.enable = true;
+    todo-comments.enable = true;
   };
 
   fs = {
