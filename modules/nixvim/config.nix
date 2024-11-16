@@ -18,6 +18,7 @@
     notify.enable = true;
     lualine.enable = true;
     incline.enable = true;
+    yazi.enable = true;
   };
 
   utils = {
