@@ -23,10 +23,16 @@
       settings = {
         notify_on_error = true;
 
-        format_on_save = {
-          timeoutMs = 500;
-          lspFallback = true;
-        };
+        format_on_save =
+          # Lua
+          ''
+            function(bufnr)
+              if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+                return
+              end
+              return { timeout_ms = 200, lsp_format = "fallback" }
+            end
+          '';
 
         formatters_by_ft = {
           html = {
@@ -68,6 +74,7 @@
             stop_after_first = true;
           };
           rust = ["rustfmt"];
+          "_" = ["trim_whitespace"];
         };
       };
     };

@@ -25,8 +25,7 @@
           silent = true;
           desc = "Diagnostics (Trouble)";
         };
-      }
-      {
+      } {
         mode = "n";
         key = "<leader>xX";
         action = "<cmd>Trouble diagnostics toggle filter.buf=0<cr>";
