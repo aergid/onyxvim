@@ -1,6 +1,9 @@
-{ lib, config, ... }:
 {
-  options = { ui.barbar.enable = lib.mkEnableOption "Enable  module"; };
+  lib,
+  config,
+  ...
+}: {
+  options = {ui.barbar.enable = lib.mkEnableOption "Enable  module";};
 
   config = lib.mkIf config.ui.barbar.enable {
     plugins.barbar = {
@@ -14,10 +17,14 @@
         insert_at_end = true;
         focus_on_close = "previous";
         sidebar_filetypes = {
-           neo-tree = {
+          neo-tree = {
             event = "BufWipeout";
             text = "neo-tree";
             align = "left";
+          };
+          undotree = {
+            text = "undotree";
+            align = "right";
           };
         };
         exclude_ft = [
@@ -28,15 +35,27 @@
         exclude_name = [
         ];
         icons = {
-          button ="";
+          button = "";
           separator_at_end = true;
           gitsigns = {
-            added = {enabled = true; icon = "+";};
-            changed = {enabled = true; icon = "~";};
-            deleted = {enabled = true; icon = "-";};
+            added = {
+              enabled = true;
+              icon = "+";
+            };
+            changed = {
+              enabled = true;
+              icon = "~";
+            };
+            deleted = {
+              enabled = true;
+              icon = "-";
+            };
           };
           modified = {button = "●";};
-          pinned = {button = ""; filename = true;};
+          pinned = {
+            button = "";
+            filename = true;
+          };
         };
       };
     };
@@ -45,7 +64,7 @@
       {
         mode = "n";
         key = "<Tab>";
-        action ="<Cmd>BufferPrevious<CR>";
+        action = "<Cmd>BufferPrevious<CR>";
         options = {
           desc = "Cycle to next buffer";
         };
@@ -148,4 +167,3 @@
     ];
   };
 }
-
