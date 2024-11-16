@@ -1,4 +1,4 @@
-{ lib, config, ... }: 
+{ lib, config, ... }:
 {
   options = { ui.barbar.enable = lib.mkEnableOption "Enable  module"; };
 
@@ -16,7 +16,7 @@
         sidebar_filetypes = {
            neo-tree = {
             event = "BufWipeout";
-            text = "neo-tree"; 
+            text = "neo-tree";
             align = "left";
           };
         };
@@ -30,6 +30,13 @@
         icons = {
           button ="";
           separator_at_end = true;
+          gitsigns = {
+            added = {enabled = true; icon = "+";};
+            changed = {enabled = true; icon = "~";};
+            deleted = {enabled = true; icon = "-";};
+          };
+          modified = {button = "●";};
+          pinned = {button = ""; filename = true;};
         };
       };
     };
@@ -55,10 +62,26 @@
 
       {
         mode = "n";
+        key = "<C-S-c>";
+        action = "<cmd>BufferRestore<cr>";
+        options = {
+          desc = "Restore Buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<C-c>";
+        action = "<cmd>BufferClose<cr>";
+        options = {
+          desc = "Delete buffer";
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>bu";
         action = "<cmd>BufferRestore<cr>";
         options = {
-          desc = "Delete Restore";
+          desc = "Restore Buffer";
         };
       }
       {

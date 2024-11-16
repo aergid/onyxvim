@@ -1,6 +1,6 @@
 {
   opts = {
-    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
+    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals";
     updatetime = 50; # Faster completion
 
     # diff related

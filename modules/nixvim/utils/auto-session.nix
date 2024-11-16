@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ helpers, lib, config, ... }:
 {
   options = {
     utils.auto-session.enable = lib.mkEnableOption "Enable auto-session module";
@@ -20,6 +20,11 @@
 
         pre_save_cmds = [
           "Neotree close"
+          (helpers.mkRaw ''
+            function()
+              vim.api.nvim_exec_autocmds('User', { pattern = 'SessionSavePre' })
+            end
+          '')
         ];
         post_restore_cmds = [
           "Neotree filesystem show"
