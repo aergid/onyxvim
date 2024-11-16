@@ -30,5 +30,16 @@
         yazi_floating_window_border = 'rounded',
       })
     '';
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>o";
+        action = "<Cmd>Yazi toggle<CR>";
+        options = {
+          desc = "Open Yazi";
+        };
+      }
+    ];
   };
 }

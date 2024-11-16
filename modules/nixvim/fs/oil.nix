@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     fs.oil.enable = lib.mkEnableOption "Enable oil module";
   };
@@ -17,7 +20,6 @@
           win_options = {
             winblend = 0;
           };
-
         };
 
         float = {
@@ -30,7 +32,7 @@
           };
         };
         keymaps = {
-          "g?" = "actions.show_help";
+          "?" = "actions.show_help";
           "<CR>" = "actions.select";
           "<C-v>" = "actions.select_vsplit";
           "<C-s>" = "actions.select_split"; # this is used to navigate left
@@ -38,7 +40,7 @@
           "<C-p>" = "actions.preview";
           "<C-c>" = "actions.close";
           "<C-r>" = "actions.refresh";
-          "-" = "actions.parent";
+          "<Backspace>" = "actions.parent";
           "_" = "actions.open_cwd";
           "`" = "actions.cd";
           "~" = "actions.tcd";
@@ -52,7 +54,7 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>o";
+        key = "<leader>e";
         action = ":Oil --float<CR>";
         options = {
           desc = "Open parent directory";
@@ -62,4 +64,3 @@
     ];
   };
 }
-
