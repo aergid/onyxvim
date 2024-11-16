@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  ...
+}:
+# Configured formatters. Turned off in favor of conform.
 {
   options = {
     lsp.none-ls-nvim.enable = lib.mkEnableOption "Enable none-ls-nvim module";
@@ -10,20 +15,22 @@
       settings = {
         enableLspFormat = false;
         updateInInsert = false;
-        onAttach = ''
-          function(client, bufnr)
-              if client.supports_method "textDocument/formatting" then
-                vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                  group = augroup,
-                  buffer = bufnr,
-                  callback = function()
-                    vim.lsp.buf.format { bufnr = bufnr }
-                  end,
-                })
+        onAttach =
+          # Lua
+          ''
+            function(client, bufnr)
+                if client.supports_method "textDocument/formatting" then
+                  vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
+                  vim.api.nvim_create_autocmd("BufWritePre", {
+                    group = augroup,
+                    buffer = bufnr,
+                    callback = function()
+                      vim.lsp.buf.format { bufnr = bufnr }
+                    end,
+                  })
+                end
               end
-            end
-        '';
+          '';
       };
       sources = {
         code_actions = {
@@ -83,4 +90,3 @@
     # ];
   };
 }
-
