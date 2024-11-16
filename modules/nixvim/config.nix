@@ -24,6 +24,7 @@
     which-key.enable = true;
     telescope-nvim.enable = true;
     todo-comments.enable = true;
+    undotree.enable = true;
   };
 
   fs = {
