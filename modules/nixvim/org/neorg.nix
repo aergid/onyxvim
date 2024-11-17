@@ -10,21 +10,26 @@
   config = lib.mkIf config.org.neorg.enable {
     files."after/ftplugin/norg.lua" = {
       localOpts.conceallevel = 3;
-
       keymaps = [
         {
           mode = "n";
           key = "<leader>uc";
           action = ":Neorg toggle-concealer<CR>";
-          options.silent = true;
-          options.desc = "Neorg toggle-concealer";
+          options = {
+            silent = true;
+            desc = "Neorg toggle-concealer";
+            buffer = true;
+          };
         }
         {
           mode = "n";
           key = "<C-g>";
           action = ":Neorg toc<CR>";
-          options.silent = true;
-          options.desc = "Neorg TOC";
+          options = {
+            silent = true;
+            desc = "Neorg TOC";
+            buffer = true;
+          };
         }
       ];
     };
