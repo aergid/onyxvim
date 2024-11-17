@@ -8,33 +8,86 @@
   };
 
   config = lib.mkIf config.org.neorg.enable {
+    files."after/ftplugin/norg.lua" = {
+      localOpts.conceallevel = 3;
+
+      keymaps = [
+        {
+          mode = "n";
+          key = "<leader>uc";
+          action = ":Neorg toggle-concealer<CR>";
+          options.silent = true;
+          options.desc = "Neorg toggle-concealer";
+        }
+        {
+          mode = "n";
+          key = "<C-g>";
+          action = ":Neorg toc<CR>";
+          options.silent = true;
+          options.desc = "Neorg TOC";
+        }
+      ];
+    };
+
     plugins = {
-      neorg.enable = true;
+      neorg = {
+        enable = true;
+        # lazyLoading = true;
 
-      modules = {
-        "core.defaults".__empty = null;
+        modules = {
+          # Actually enables submodules with defaults
+          "core.defaults".__empty = null;
+          "core.concealer".__empty = null;
+          "core.completion".config.engine = "nvim-cmp";
+          "core.qol.toc".config.close_after_use = true;
+          "core.summary".__empty = null;
+          "core.itero".__empty = null;
+          "core.ui.calendar".__empty = null;
+          "core.promo".__empty = null;
+          "core.pivot".__empty = null;
+          "core.export".__empty = null;
+          "core.integrations.treesitter".__empty = null;
+          # "core.integrations.telescope".__empty = null;
 
-        "core.keybinds".config.hook.__raw = ''
-          function(keybinds)
-            keybinds.unmap('norg', 'n', '<C-s>')
-          end
-        '';
+          "core.esupports.metagen".config = {
+            type = "auto";
+            update_date = true;
+          };
 
-        "core.dirman" = {
-          config = {
-            workspaces = {
-              home = "~/Notes/home";
-              work = "~/Notes/work";
+          "core.export.markdown".config = {
+            extension = "md";
+            extensions = "all";
+          };
+
+          # "core.keybinds".config = {
+          #   default_keybinds = false;
+          # };
+          "core.keybinds".config.hook.__raw = ''
+            function(keybinds)
+              keybinds.unmap('norg', 'n', '<C-s>')
+            end
+          '';
+
+          "core.dirman" = {
+            config = {
+              workspaces = {
+                home = "~/Notes/home";
+                work = "~/Notes/work";
+              };
+              default_workspace = "home";
             };
-            default_workspace = "home";
           };
         };
-
-        "core.concealer".__empty = null;
-        "core.completion".config.engine = "nvim-cmp";
-        "core.qol.toc".config.close_after_use = true;
       };
     };
+
+    # autoCmd = [
+    # {
+    #   event = "FileType";
+    #   pattern = "nix";
+    #   command = "setlocal tabstop=2 shiftwidth=2";
+    # }
+    # ];
 
     keymaps = [
       {
@@ -53,7 +106,7 @@
       }
       {
         mode = "n";
-        key = "<leader>my";
+        key = "<leader>mp";
         action = ":Neorg journal custom<CR>";
         options.silent = true;
         options.desc = "Neorg journal pick";

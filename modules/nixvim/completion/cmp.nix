@@ -46,7 +46,7 @@
             }
             {
               name = "neorg";
-              priority = 500;
+              priority = 1500;
             }
             {
               name = "dictionary";
