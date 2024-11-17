@@ -28,6 +28,7 @@
     todo-comments.enable = true;
     undotree.enable = true;
     comment.enable = true;
+    leap.enable = true;
   };
 
   fs = {
