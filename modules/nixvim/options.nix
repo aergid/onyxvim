@@ -1,13 +1,16 @@
 {
+  clipboard = {
+    # Use system clipboard
+    register = "unnamedplus";
+    providers.wl-copy.enable = true;
+  };
+
   opts = {
-    sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals";
+    sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals";
     updatetime = 50; # Faster completion
 
     # diff related
-    diffopt="internal,filler,closeoff,algorithm:patience,linematch:60";
-    # TODO: add scrollbind in autoCmd for diff views
-    # scrollbind = true;
-
+    diffopt = "internal,filler,closeoff,algorithm:patience,linematch:60";
 
     # Tab and lines options
     tabstop = 2; # Number of spaces a <Tab> in the text stands for (local to buffer)
@@ -54,6 +57,5 @@
     fileencoding = "utf-8"; # File-content encoding for the current buffer
     termguicolors = true; # Enables 24-bit RGB color in the |TUI|
     spell = false; # Highlight spelling mistakes (local to window)
-
   };
 }
