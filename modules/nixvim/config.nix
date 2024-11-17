@@ -55,6 +55,10 @@
     none-ls-nvim.enable = false;
   };
 
+  org = {
+    neorg.enable = true;
+  };
+
   completion = {
     cmp.enable = true;
     lspkind.enable = true;
