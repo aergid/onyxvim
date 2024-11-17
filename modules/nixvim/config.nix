@@ -43,6 +43,7 @@
 
   languages = {
     treesitter-nvim.enable = true;
+    markview.enable = true;
   };
 
   lsp = {
