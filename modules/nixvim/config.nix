@@ -27,6 +27,7 @@
     telescope-nvim.enable = true;
     todo-comments.enable = true;
     undotree.enable = true;
+    comment.enable = true;
   };
 
   fs = {
