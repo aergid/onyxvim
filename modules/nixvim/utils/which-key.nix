@@ -1,11 +1,15 @@
-{ lib, config, pkgs, ... }:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options = {
     utils.which-key.enable = lib.mkEnableOption "Enable which-key module";
   };
 
   config = lib.mkIf config.utils.which-key.enable {
-    extraPackages = with pkgs; [ ripgrep ];
+    extraPackages = with pkgs; [ripgrep];
     plugins.which-key = {
       enable = true;
       settings = {
@@ -66,6 +70,11 @@
             group = "+debug";
           }
           {
+            __unkeyed-1 = "<leader>b";
+            mode = "n";
+            group = "+buffer";
+          }
+          {
             __unkeyed-1 = "<leader>f";
             mode = "n";
             group = "+find/file";
@@ -90,20 +99,21 @@
             mode = "n";
             group = "+tab";
           }
-
-          {
-            __unkeyed-1 = "<leader>t";
-            mode = "n";
-            group = "+tab";
-          }
-
           {
             __unkeyed-1 = "<leader>u";
             mode = "n";
             group = "+ui";
           }
-
-
+          {
+            __unkeyed-1 = "<leader>e";
+            mode = "n";
+            group = "+explorer";
+          }
+          {
+            __unkeyed-1 = "<leader>n";
+            mode = "n";
+            group = "+neorg";
+          }
         ];
         win = {
           border = "none";
@@ -113,4 +123,3 @@
     };
   };
 }
-

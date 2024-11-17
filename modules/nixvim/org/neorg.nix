@@ -92,35 +92,35 @@
     keymaps = [
       {
         mode = "n";
-        key = "<leader>mt";
+        key = "<leader>nt";
         action = ":Neorg journal today<CR>";
         options.silent = true;
         options.desc = "Neorg journal today";
       }
       {
         mode = "n";
-        key = "<leader>my";
+        key = "<leader>ny";
         action = ":Neorg journal yesterday<CR>";
         options.silent = true;
         options.desc = "Neorg journal yesterday";
       }
       {
         mode = "n";
-        key = "<leader>mp";
+        key = "<leader>np";
         action = ":Neorg journal custom<CR>";
         options.silent = true;
         options.desc = "Neorg journal pick";
       }
       {
         mode = "n";
-        key = "<leader>mh";
+        key = "<leader>nh";
         action = ":Neorg workspace home<CR>";
         options.silent = true;
         options.desc = "Neorg workspace home";
       }
       {
         mode = "n";
-        key = "<leader>mw";
+        key = "<leader>nw";
         action = ":Neorg workspace work<CR>";
         options.silent = true;
         options.desc = "Neorg workspace work";

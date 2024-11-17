@@ -51,16 +51,16 @@
         };
       };
     };
-    keymaps = [
-      {
-        mode = "n";
-        key = "<leader>e";
-        action = ":Oil --float<CR>";
-        options = {
-          desc = "Open parent directory";
-          silent = true;
-        };
-      }
-    ];
+    # keymaps = [
+    #   {
+    #     mode = "n";
+    #     key = "<leader>e";
+    #     action = ":Oil --float<CR>";
+    #     options = {
+    #       desc = "Open parent directory";
+    #       silent = true;
+    #     };
+    #   }
+    # ];
   };
 }
