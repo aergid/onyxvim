@@ -29,6 +29,7 @@
     undotree.enable = true;
     comment.enable = true;
     leap.enable = true;
+    zen-mode.enable = true;
   };
 
   fs = {
