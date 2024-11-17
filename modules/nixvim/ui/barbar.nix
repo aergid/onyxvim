@@ -3,7 +3,7 @@
   config,
   ...
 }: {
-  options = {ui.barbar.enable = lib.mkEnableOption "Enable  module";};
+  options = {ui.barbar.enable = lib.mkEnableOption "Enable barbar module";};
 
   config = lib.mkIf config.ui.barbar.enable {
     plugins.barbar = {
@@ -92,7 +92,7 @@
         key = "<C-c>";
         action = "<cmd>BufferClose<cr>";
         options = {
-          desc = "Delete buffer";
+          desc = "Close buffer";
         };
       }
       {
@@ -108,7 +108,7 @@
         key = "<leader>bd";
         action = "<cmd>BufferClose<cr>";
         options = {
-          desc = "Delete buffer";
+          desc = "Close buffer";
         };
       }
 
@@ -122,19 +122,27 @@
       }
       {
         mode = "n";
-        key = "<leader>br";
+        key = "<leader>bf";
+        action = "<cmd>BufferFirst<cr>";
+        options = {
+          desc = "Focus first buffer";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>bcr";
         action = "<cmd>BufferCloseBuffersLeft<cr>";
         options = {
-          desc = "Delete buffers to the right";
+          desc = "Close buffers to the right";
         };
       }
 
       {
         mode = "n";
-        key = "<leader>bl";
+        key = "<leader>bcl";
         action = "<cmd>BufferCloseBuffersRight<cr>";
         options = {
-          desc = "Delete buffers to the left";
+          desc = "Close buffers to the left";
         };
       }
 
@@ -143,7 +151,7 @@
         key = "<leader>bo";
         action = "<cmd>BufferCloseAllButCurrentOrPinned<cr>";
         options = {
-          desc = "Delete other buffers";
+          desc = "Close other buffers";
         };
       }
 
@@ -161,7 +169,7 @@
         key = "<leader>bP";
         action = "<Cmd>BufferCloseAllButPinned<CR>";
         options = {
-          desc = "Delete non-pinned buffers";
+          desc = "Close non-pinned buffers";
         };
       }
     ];
