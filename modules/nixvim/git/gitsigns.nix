@@ -1,5 +1,8 @@
-{ lib, config, ... }:
 {
+  lib,
+  config,
+  ...
+}: {
   options = {
     git.gitsigns.enable = lib.mkEnableOption "Enable gitsigns module";
   };
@@ -8,7 +11,7 @@
     plugins.gitsigns = {
       enable = true;
       settings = {
-        trouble = (config.lsp.trouble.enable == true);
+        trouble = config.lsp.trouble.enable == true;
         current_line_blame = false;
       };
     };
@@ -16,6 +19,15 @@
       {
         mode = "n";
         key = "<leader>gr";
+        action = ":Gitsigns reset_hunk<CR>";
+        options = {
+          silent = true;
+          desc = "Reset hunk";
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>gR";
         action = ":Gitsigns reset_buffer<CR>";
         options = {
           silent = true;
@@ -70,4 +82,3 @@
     ];
   };
 }
-
