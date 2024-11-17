@@ -50,23 +50,24 @@
               nixpkgs = {
                 expr = "import <nixpkgs> {}";
               };
-              options = {
-                nixos = {
-                  expr = ''
-                    let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
-                  '';
-                };
-                home_manager = {
-                  expr = ''
-                    let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
-                  '';
-                };
-                darwin = {
-                  expr = ''
-                    let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
-                  '';
-                };
-              };
+              # TODO: add correct paths to options
+              # options = {
+              #   nixos = {
+              #     expr = ''
+              #       let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              #     '';
+              #   };
+              #   home_manager = {
+              #     expr = ''
+              #       let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              #     '';
+              #   };
+              #   darwin = {
+              #     expr = ''
+              #       let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
+              #     '';
+              #   };
+              # };
             };
           };
           ts_ls = {
