@@ -13,6 +13,7 @@
       };
       lsp = {
         enable = true;
+        inlayHints = true;
         capabilities = "offsetEncoding = 'utf-16'";
         servers = {
           clangd = {
@@ -45,6 +46,28 @@
           };
           nixd = {
             enable = true;
+            settings = {
+              nixpkgs = {
+                expr = "import <nixpkgs> {}";
+              };
+              options = {
+                nixos = {
+                  expr = ''
+                    let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).nixosConfigurations; in (builtins.head (builtins.attrValues configs)).options
+                  '';
+                };
+                home_manager = {
+                  expr = ''
+                    let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).homeConfigurations; in (builtins.head (builtins.attrValues configs)).options
+                  '';
+                };
+                darwin = {
+                  expr = ''
+                    let configs = (builtins.getFlake ("git+file://" + builtins.toString ./.)).darwinConfigurations; in (builtins.head (builtins.attrValues configs)).options
+                  '';
+                };
+              };
+            };
           };
           ts_ls = {
             enable = true;
@@ -84,13 +107,21 @@
               };
             };
           };
+          cmake.enable = true;
+          dockerls.enable = true;
+          docker_compose_language_service.enable = true;
+          graphql.enable = true;
+          html.enable = true;
+          jsonls.enable = true;
+          ltex.enable = true;
+          metals.enable = true;
+          sqls.enable = true;
+          yamlls.enable = true;
+          texlab.enable = true;
           eslint = {
             enable = true;
           };
           pyright = {
-            enable = true;
-          };
-          ruff_lsp = {
             enable = true;
           };
 
