@@ -72,10 +72,24 @@
     catppuccin = {
       enable = true;
       settings = {
+        /*
+         custom_highlights =
+        # Lua
+        ''
+          function(colors)
+            return {
+              DiffChange = { fg = "#BD93F9" },
+              DiffDelete = { fg = "#FF5555" },
+              DiffAdd = { fg = "#FF5555" },
+            }
+            end
+        '';
+        */
         flavour = "mocha";
         term_colors = true;
         integrations = {
           cmp = true;
+          diffview = true;
           gitsigns = true;
           indent_blankline = {enabled = true;};
           leap = true;

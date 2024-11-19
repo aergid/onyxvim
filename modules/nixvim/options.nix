@@ -11,6 +11,7 @@
 
     # diff related
     diffopt = "internal,filler,closeoff,algorithm:patience,linematch:60";
+    fillchars = "diff:\ ";
 
     # Tab and lines options
     tabstop = 2; # Number of spaces a <Tab> in the text stands for (local to buffer)
