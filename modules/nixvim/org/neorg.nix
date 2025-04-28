@@ -39,7 +39,7 @@
         enable = true;
         # lazyLoading = true;
 
-        modules = {
+        settings.load = {
           # Actually enables submodules with defaults
           "core.defaults".__empty = null;
           "core.concealer".__empty = null;
