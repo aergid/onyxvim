@@ -21,8 +21,7 @@
     };
   };
 
-  outputs =
-    inputs:
+  outputs = inputs:
     inputs.snowfall-lib.mkFlake {
       inherit inputs;
 
@@ -32,12 +31,17 @@
         namespace = "onyxvim";
       };
 
+      systems = [
+        "aarch64-darwin"
+        "x86_64-darwin"
+      ];
+
       channels-config.allowUnfree = true;
 
       alias.packages.default = "neovim";
 
       # adds pkgs.nixvim
-      overlays = with inputs; [ nixvim.overlays.default ];
+      overlays = with inputs; [nixvim.overlays.default];
 
       outputs-builder = channels: {
         formatter = channels.nixpkgs.nixfmt-rfc-style;
@@ -48,7 +52,7 @@
             nixfmt = {
               enable = true;
               entry = "${channels.nixpkgs.nixfmt-rfc-style}/bin/nixfmt";
-              extraPackages = [ channels.nixpkgs.nixfmt-rfc-style ];
+              extraPackages = [channels.nixpkgs.nixfmt-rfc-style];
             };
           };
         };
