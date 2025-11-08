@@ -9,39 +9,41 @@
   config = lib.mkIf config.fs.neo-tree.enable {
     plugins.neo-tree = {
       enable = true;
-      enableDiagnostics = true;
-      enableGitStatus = true;
-      enableModifiedMarkers = true;
-      enableRefreshOnWrite = true;
-      closeIfLastWindow = true;
-      popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
-      buffers = {
-        bindToCwd = false;
-        followCurrentFile = {
-          enabled = true;
+      settings = {
+        enableDiagnostics = true;
+        enableGitStatus = true;
+        enableModifiedMarkers = true;
+        enableRefreshOnWrite = true;
+        closeIfLastWindow = true;
+        popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
+        buffers = {
+          bindToCwd = false;
+          followCurrentFile = {
+            enabled = true;
+          };
         };
-      };
-      # sources = [
-      #   "filesystem"
-      #   "git_status"
-      # ];
-      window = {
-        width = 40;
-        height = 15;
-        autoExpandWidth = false;
-        mappings = {
-          Z = "expand_all_nodes";
-          O.__raw = ''
-            function (state)
-              local node = state.tree:get_node()
-              if require("neo-tree.utils").is_expandable(node) then
-                state.commands["toggle_node"](state)
-              else
-                state.commands['open'](state)
-                vim.cmd('Neotree reveal')
+        # sources = [
+        #   "filesystem"
+        #   "git_status"
+        # ];
+        window = {
+          width = 40;
+          height = 15;
+          autoExpandWidth = false;
+          mappings = {
+            Z = "expand_all_nodes";
+            O.__raw = ''
+              function (state)
+                local node = state.tree:get_node()
+                if require("neo-tree.utils").is_expandable(node) then
+                  state.commands["toggle_node"](state)
+                else
+                  state.commands['open'](state)
+                  vim.cmd('Neotree reveal')
+                end
               end
-            end
-          '';
+            '';
+          };
         };
       };
     };
