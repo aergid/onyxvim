@@ -11,6 +11,7 @@
   };
   config = lib.mkIf config.lsp.conform.enable {
     extraPackages = with pkgs; [
+      tree-sitter
       black
       prettierd
       stylua

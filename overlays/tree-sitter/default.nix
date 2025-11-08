@@ -1,6 +1,4 @@
-{ channels, ... }:
-final: prev:
-let
+{channels, ...}: final: prev: let
   tree-sitter-dotbox = {
     url = "https://github.com/jakehamilton/tree-sitter-dotbox";
     rev = "234f92d21f2a7b987477a763e117c58af47e429f";
@@ -19,24 +17,53 @@ let
     deepClone = false;
     leaveDotGit = false;
   };
-in
-{
-  tree-sitter-grammars = prev.tree-sitter-grammars // {
-    tree-sitter-dotbox = prev.tree-sitter.buildGrammar {
-      language = "dotbox";
-      src = prev.fetchgit tree-sitter-dotbox;
-      version = "unstable-2022-11-26";
-    };
-    tree-sitter-juice = prev.tree-sitter.buildGrammar {
-      language = "juice";
-      src = prev.fetchgit tree-sitter-juice;
-      version = "unstable-2024-03-11";
-    };
+  tree-sitter-norg = {
+    url = "https://github.com/nvim-neorg/tree-sitter-norg";
+    rev = "refs/tags/v0.2.6";
+    sha256 = "8qSdwHlfnjFuQF4zNdLtU2/tzDRhDZbo9K54Xxgn5+8=";
+    fetchLFS = false;
+    fetchSubmodules = false;
+    deepClone = false;
+    leaveDotGit = false;
   };
+  tree-sitter-norg-meta = {
+    url = "https://github.com/nvim-neorg/tree-sitter-norg-meta";
+    rev = "refs/tags/v0.1.0";
+    sha256 = "8qSdwHlfnjFuQF4zNdLtU2/tzDRhDZbo9K54Xxgn5+8=";
+    fetchLFS = false;
+    fetchSubmodules = false;
+    deepClone = false;
+    leaveDotGit = false;
+  };
+in {
+  tree-sitter-grammars =
+    prev.tree-sitter-grammars
+    // {
+      tree-sitter-dotbox = prev.tree-sitter.buildGrammar {
+        language = "dotbox";
+        src = prev.fetchgit tree-sitter-dotbox;
+        version = "unstable-2022-11-26";
+      };
+      tree-sitter-juice = prev.tree-sitter.buildGrammar {
+        language = "juice";
+        src = prev.fetchgit tree-sitter-juice;
+        version = "unstable-2024-03-11";
+      };
+      tree-sitter-norg = prev.tree-sitter.buildGrammar {
+        language = "norg";
+        src = prev.fetchgit tree-sitter-norg;
+        version = "unstable-2025-04-28";
+      };
+      tree-sitter-norg-meta = prev.tree-sitter.buildGrammar {
+        language = "norg-meta";
+        src = prev.fetchgit tree-sitter-norg-meta;
+        version = "unstable-2025-04-28";
+      };
+    };
 
   tree-sitter = prev.tree-sitter.override {
     extraGrammars = {
-      inherit tree-sitter-dotbox tree-sitter-juice;
+      inherit tree-sitter-dotbox tree-sitter-juice tree-sitter-norg tree-sitter-norg-meta;
     };
   };
 }
