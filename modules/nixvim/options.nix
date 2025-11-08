@@ -5,6 +5,8 @@
     providers.wl-copy.enable = true;
   };
 
+  waylandSupport = false;
+
   opts = {
     sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions,globals";
     updatetime = 50; # Faster completion
