@@ -26,6 +26,9 @@
         ensure_installed = [
           "bash"
           "c"
+          "go"
+          "gomod"
+          "gosum"
           "html"
           "css"
           "javascript"

@@ -44,6 +44,19 @@
           nil_ls = {
             enable = false;
           };
+          gopls = {
+            enable = true;
+            autostart = true;
+            settings = {
+              usePlaceholders = true;
+              gofumpt = true;
+              analyses = {
+                unusedparams = true;
+                unreachable = true;
+              };
+              staticcheck = true;
+            };
+          };
           nixd = {
             enable = true;
             settings = {

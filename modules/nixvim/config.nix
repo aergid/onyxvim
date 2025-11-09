@@ -128,5 +128,7 @@
   };
 
   extraPlugins = with pkgs.vimPlugins; [
+    vim-go
+    comment-box-nvim
   ];
 }

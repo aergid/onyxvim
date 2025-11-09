@@ -31,11 +31,6 @@
         namespace = "onyxvim";
       };
 
-      systems = [
-        "aarch64-darwin"
-        "x86_64-darwin"
-      ];
-
       channels-config.allowUnfree = true;
 
       alias.packages.default = "neovim";
