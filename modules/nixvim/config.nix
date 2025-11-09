@@ -47,6 +47,7 @@
   languages = {
     treesitter-nvim.enable = true;
     markview.enable = true;
+    golang.enable = true;
   };
 
   lsp = {
@@ -128,7 +129,6 @@
   };
 
   extraPlugins = with pkgs.vimPlugins; [
-    vim-go
     comment-box-nvim
   ];
 }
