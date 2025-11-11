@@ -15,6 +15,8 @@
         enableModifiedMarkers = true;
         enableRefreshOnWrite = true;
         closeIfLastWindow = true;
+        # open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy"};
+        openFilesDoNotReplaceTypes = ["terminal" "Trouble" "qf" "edgy"];
         popupBorderStyle = "rounded"; # Type: null or one of “NC”, “double”, “none”, “rounded”, “shadow”, “single”, “solid” or raw lua code
         buffers = {
           bindToCwd = false;
@@ -22,14 +24,14 @@
             enabled = true;
           };
         };
-        # sources = [
-        #   "filesystem"
-        #   "git_status"
-        # ];
+        sources = [
+          "filesystem"
+          "buffers"
+          "git_status"
+          "document_symbols"
+        ];
         window = {
-          width = 40;
-          height = 15;
-          autoExpandWidth = false;
+          # position = "current";
           mappings = {
             Z = "expand_all_nodes";
             O.__raw = ''

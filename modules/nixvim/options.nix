@@ -37,6 +37,10 @@
     hidden = true; # Keep closed buffer open in the background
     mouse = "a"; # Enable mouse control
     mousemodel = "extend"; # Mouse right-click extends the current selection
+
+    # Default splitting will cause your main splits to jump when opening an edgebar.
+    # To prevent this, set `splitkeep` to either `screen` or `topline`.
+    splitkeep = "screen";
     splitbelow = true; # A new window is put below the current one
     splitright = true; # A new window is put right of the current one
 
