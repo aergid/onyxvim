@@ -18,6 +18,7 @@
     lualine.enable = true;
     incline.enable = true;
     yazi.enable = true;
+    edgy.enable = true;
   };
 
   utils = {
