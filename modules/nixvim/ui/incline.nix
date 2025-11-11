@@ -7,18 +7,9 @@
   options = {ui.incline.enable = lib.mkEnableOption "Enable  incline";};
 
   config = lib.mkIf config.ui.incline.enable {
-    extraPlugins = [
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "incline";
-        src = pkgs.fetchFromGitHub {
-          owner = "b0o";
-          repo = "incline.nvim";
-          rev = "16fc9c0";
-          sha256 = "sha256-5DoIvIdAZV7ZgmQO2XmbM3G+nNn4tAumsShoN3rDGrs=";
-        };
-      })
+    extraPlugins = with pkgs.vimPlugins; [
+      incline-nvim
     ];
-
     extraConfigLua = ''
       local helpers = require 'incline.helpers'
       local devicons = require 'nvim-web-devicons'
