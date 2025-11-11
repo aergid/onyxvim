@@ -107,7 +107,7 @@
             };
           };
           navic = {
-            enabled = true;
+            enabled = false;
             custom_bg = "lualine";
           };
           neotest = true;
