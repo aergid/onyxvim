@@ -51,36 +51,41 @@
             filter = function(buf)
               return vim.b[buf].neo_tree_source == "filesystem"
             end,
-            size = { height = 0.5 },
-          },
-          {
-            title = "Neo-Tree Git",
-            ft = "neo-tree",
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "git_status"
-            end,
+            size = { height = 0.4 },
             pinned = true,
-            collapsed = true, -- show window as closed/collapsed on start
-            open = "Neotree position=right git_status",
+            open = "Neotree filesystem",
           },
           {
             title = "Neo-Tree Buffers",
             ft = "neo-tree",
+            size = { height = 0.2 },
             filter = function(buf)
               return vim.b[buf].neo_tree_source == "buffers"
             end,
             pinned = true,
-            collapsed = true, -- show window as closed/collapsed on start
+            -- collapsed = true, -- show window as closed/collapsed on start
             open = "Neotree position=top buffers",
+          },
+          {
+            title = "Neo-Tree Git",
+            ft = "neo-tree",
+            size = { height = 0.2 },
+            filter = function(buf)
+              return vim.b[buf].neo_tree_source == "git_status"
+            end,
+            pinned = true,
+            -- collapsed = true, -- show window as closed/collapsed on start
+            open = "Neotree position=top git_status";
           },
           {
             title = "Neo-Tree Symbols",
             ft = "neo-tree",
+            size = { height = 0.2 },
             filter = function(buf)
               return vim.b[buf].neo_tree_source == "document_symbols"
             end,
             pinned = true,
-            collapsed = true, -- show window as closed/collapsed on start
+            -- collapsed = true, -- show window as closed/collapsed on start
             open = "Neotree position=top document_symbols",
           },
         },

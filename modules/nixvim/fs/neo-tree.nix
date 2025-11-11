@@ -33,6 +33,7 @@
         window = {
           # position = "current";
           mappings = {
+            e.__raw = ''nil'';
             Z = "expand_all_nodes";
             O.__raw = ''
               function (state)
