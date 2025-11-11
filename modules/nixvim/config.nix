@@ -127,6 +127,10 @@
     };
   };
 
+  plugins = {
+    colorful-winsep.enable = true;
+  };
+
   extraPlugins = with pkgs.vimPlugins; [
   ];
 }
