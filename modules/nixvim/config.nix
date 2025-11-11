@@ -10,7 +10,6 @@
   luaLoader.enable = true;
 
   ui = {
-    barbecue.enable = false;
     bufferline.enable = false;
     barbar.enable = true;
     indent-blankline.enable = true;
@@ -129,6 +128,5 @@
   };
 
   extraPlugins = with pkgs.vimPlugins; [
-    comment-box-nvim
   ];
 }
