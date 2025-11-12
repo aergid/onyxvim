@@ -20,11 +20,35 @@
             "git_status",
             "document_symbols",
           },
+
+          source_selector = {
+            winbar = true,
+            sources = {                                               -- table
+              {
+                source = "filesystem",                                -- string
+                display_name = " 󰉓 Files "                            -- string | nil
+              },
+              {
+                source = "buffers",                                   -- string
+                display_name = " 󰈚 Buffers "                          -- string | nil
+              },
+              {
+                source = "git_status",                                -- string
+                display_name = " 󰊢 Git "                              -- string | nil
+              },
+              {
+                source = "document_symbols",                                -- string
+                display_name = "  Symbols "                              -- string | nil
+              },
+
+            },
+          },
           auto_clean_after_session_restore = true, -- Automatically clean up broken neo-tree buffers saved in sessions
           close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
           open_files_in_last_window = false, -- false = open files in top left window
           open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy" }, -- when opening files, do not use windows containing these filetypes or buftypes
           popup_border_style = "single", -- "double", "rounded", "single", "solid", (or "" to use 'winborder' on Neovim v0.11+)
+
 
           commands = {
             clear_clipboard = function(state)
@@ -47,7 +71,7 @@
                 end,
                 desc = "open file or dir",
               },
-              ["e"] = nil, -- disable auto expand; it doesn't work with edgy
+              ["e"] = "noop", -- disable auto expand; it doesn't work with edgy
               ["<"] = "prev_source",
               [">"] = "next_source",
             },
@@ -59,7 +83,7 @@
             terminals_first = false,  -- when true, terminals will be listed before file buffers
           },
           document_symbols = {
-            follow_cursor = true,
+            follow_cursor = false,
             renderers = {
               root = {
                 {"indent"},

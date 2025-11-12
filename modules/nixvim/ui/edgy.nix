@@ -43,52 +43,52 @@
           },
           { ft = "spectre_panel", size = { height = 0.4 } },
         },
-        left = {
-          -- Neo-tree filesystem always takes half the screen height
-          {
-            title = "Neo-Tree",
-            ft = "neo-tree",
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "filesystem"
-            end,
-            size = { height = 0.4 },
-            pinned = true,
-            open = "Neotree position=left filesystem",
-          },
-          {
-            title = "Neo-Tree Symbols",
-            ft = "neo-tree",
-            size = { height = 0.2 },
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "document_symbols"
-            end,
-            pinned = true,
-            -- collapsed = true, -- show window as closed/collapsed on start
-            open = "Neotree position=top document_symbols",
-          },
-          {
-            title = "Neo-Tree Buffers",
-            ft = "neo-tree",
-            size = { height = 0.2 },
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "buffers"
-            end,
-            pinned = true,
-            -- collapsed = true, -- show window as closed/collapsed on start
-            open = "Neotree position=right buffers",
-          },
-          -- {
-          --   title = "Neo-Tree Git",
-          --   ft = "neo-tree",
-          --   size = { height = 0.2 },
-          --   filter = function(buf)
-          --     return vim.b[buf].neo_tree_source == "git_status"
-          --   end,
-          --   pinned = true,
-          --   -- collapsed = true, -- show window as closed/collapsed on start
-          --   open = "Neotree position=right git_status";
-          -- },
-        },
+        -- left = {
+        --   -- Neo-tree filesystem always takes half the screen height
+        --   {
+        --     title = "Neo-Tree",
+        --     ft = "neo-tree",
+        --     filter = function(buf)
+        --       return vim.b[buf].neo_tree_source == "filesystem"
+        --     end,
+        --     size = { height = 0.4 },
+        --     pinned = true,
+        --     open = "Neotree position=left filesystem",
+        --   },
+        --   {
+        --     title = "Neo-Tree Symbols",
+        --     ft = "neo-tree",
+        --     size = { height = 0.2 },
+        --     filter = function(buf)
+        --       return vim.b[buf].neo_tree_source == "document_symbols"
+        --     end,
+        --     pinned = true,
+        --     -- collapsed = true, -- show window as closed/collapsed on start
+        --     open = "Neotree position=top document_symbols",
+        --   },
+        --   {
+        --     title = "Neo-Tree Buffers",
+        --     ft = "neo-tree",
+        --     size = { height = 0.2 },
+        --     filter = function(buf)
+        --       return vim.b[buf].neo_tree_source == "buffers"
+        --     end,
+        --     pinned = true,
+        --     -- collapsed = true, -- show window as closed/collapsed on start
+        --     open = "Neotree position=right buffers",
+        --   },
+        --   -- {
+        --   --   title = "Neo-Tree Git",
+        --   --   ft = "neo-tree",
+        --   --   size = { height = 0.2 },
+        --   --   filter = function(buf)
+        --   --     return vim.b[buf].neo_tree_source == "git_status"
+        --   --   end,
+        --   --   pinned = true,
+        --   --   -- collapsed = true, -- show window as closed/collapsed on start
+        --   --   open = "Neotree position=right git_status";
+        --   -- },
+        -- },
       })
     '';
 

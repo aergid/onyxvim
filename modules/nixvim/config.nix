@@ -11,7 +11,7 @@
 
   ui = {
     bufferline.enable = false;
-    barbar.enable = true;
+    barbar.enable = false;
     indent-blankline.enable = true;
     web-devicons.enable = true;
     notify.enable = true;
