@@ -16,7 +16,7 @@
     web-devicons.enable = true;
     notify.enable = true;
     lualine.enable = true;
-    incline.enable = true;
+    incline.enable = false;
     yazi.enable = true;
     edgy.enable = true;
   };
@@ -56,7 +56,6 @@
     lsp-nvim.enable = true;
     lspsaga.enable = true;
     trouble.enable = true;
-    none-ls-nvim.enable = false;
   };
 
   org = {

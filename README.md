@@ -95,3 +95,7 @@ you can add the `onyxvim.neovim` package.
 	];
 }
 ```
+
+## Issues
+ - [ ] NeoTree document_symbols syncs with wrong window in multisplits 
+ - [ ] <leader>tc brakes colorful-winsep with 'wrong window Id'
