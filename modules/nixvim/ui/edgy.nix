@@ -53,29 +53,7 @@
             end,
             size = { height = 0.4 },
             pinned = true,
-            open = "Neotree filesystem",
-          },
-          {
-            title = "Neo-Tree Buffers",
-            ft = "neo-tree",
-            size = { height = 0.2 },
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "buffers"
-            end,
-            pinned = true,
-            -- collapsed = true, -- show window as closed/collapsed on start
-            open = "Neotree position=top buffers",
-          },
-          {
-            title = "Neo-Tree Git",
-            ft = "neo-tree",
-            size = { height = 0.2 },
-            filter = function(buf)
-              return vim.b[buf].neo_tree_source == "git_status"
-            end,
-            pinned = true,
-            -- collapsed = true, -- show window as closed/collapsed on start
-            open = "Neotree position=top git_status";
+            open = "Neotree position=left filesystem",
           },
           {
             title = "Neo-Tree Symbols",
@@ -88,8 +66,42 @@
             -- collapsed = true, -- show window as closed/collapsed on start
             open = "Neotree position=top document_symbols",
           },
+          {
+            title = "Neo-Tree Buffers",
+            ft = "neo-tree",
+            size = { height = 0.2 },
+            filter = function(buf)
+              return vim.b[buf].neo_tree_source == "buffers"
+            end,
+            pinned = true,
+            -- collapsed = true, -- show window as closed/collapsed on start
+            open = "Neotree position=right buffers",
+          },
+          -- {
+          --   title = "Neo-Tree Git",
+          --   ft = "neo-tree",
+          --   size = { height = 0.2 },
+          --   filter = function(buf)
+          --     return vim.b[buf].neo_tree_source == "git_status"
+          --   end,
+          --   pinned = true,
+          --   -- collapsed = true, -- show window as closed/collapsed on start
+          --   open = "Neotree position=right git_status";
+          -- },
         },
       })
     '';
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>etl";
+        action = ":lua require(\"edgy\").toggle(\"left\")<CR>";
+        options = {
+          silent = true;
+          desc = "Toggle left pane";
+        };
+      }
+    ];
   };
 }
