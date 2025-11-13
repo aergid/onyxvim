@@ -18,8 +18,8 @@
           section_separators = { left = "", right = ""},
           ignore_focus = { "edgy", "neo-tree" },
           disabled_filetypes = {
-            statusline = { "neo-tree" },
-            winbar = { "neo-tree" },
+            statusline = { "neo-tree", "DiffviewFiles" },
+            winbar = {  "neo-tree", "DiffviewFiles" },
           },
         },
         sections = {

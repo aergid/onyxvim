@@ -10,6 +10,7 @@
   luaLoader.enable = true;
 
   ui = {
+    fidget.enable = true;
     bufferline.enable = false;
     barbar.enable = false;
     indent-blankline.enable = true;
@@ -51,11 +52,10 @@
   };
 
   lsp = {
-    conform.enable = true;
-    fidget.enable = true;
+    conform.enable = false;
     lsp-nvim.enable = true;
-    lspsaga.enable = true;
-    trouble.enable = true;
+    lspsaga.enable = false;
+    trouble.enable = false;
   };
 
   org = {
