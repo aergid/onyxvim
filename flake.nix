@@ -162,8 +162,8 @@
             dev = true;
             ai = true;
             debug = true;
-            blink = true;
-            cmp = false;
+            blink = false;
+            cmp = true;
             treesitter = true;
             telescope = true;
             navigation = true;

@@ -78,7 +78,7 @@ return {
         },
         cmdline = {
           enabled = true,
-          view = "cmdline", -- classic cmdline at the bottom
+          view = "cmdline_popup", -- classic cmdline at the bottom
         },
         messages = { view_search = false }, -- using `nvim-hlslens`
         lsp = {

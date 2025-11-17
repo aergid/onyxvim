@@ -308,7 +308,7 @@ in
         nvim-notify
         pkgs.neovimPlugins.hlargs
         lualine-nvim
-        # noice-nvim
+        noice-nvim
         neoscroll-nvim
         nvim-bqf
         nvim-scrollbar
