@@ -96,15 +96,25 @@ return {
     "nvim-lspconfig",
     event = "FileType",
     after = function(plugin)
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+      if nixCats("nvim-cmp") then
+        local capabilities = vim.tbl_deep_extend(
+          "force",
+          vim.lsp.protocol.make_client_capabilities(),
+          require("cmp_nvim_lsp").default_capabilities()
+        )
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+        vim.lsp.config("*", {
+          capabilities = capabilities,
+        })
+      end
+      -- Tell the server the capability of foldingRange that Neovim hasn't added foldingRange to default capabilities
+      capabilities.textDocument.foldingRange = {
+        dynamicRegistration = false,
+        lineFoldingOnly = true,
+      }
       for server_name, cfg in pairs(servers) do
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-        capabilities.textDocument.completion.completionItem.snippetSupport = false
-        -- Tell the server the capability of foldingRange that Neovim hasn't added foldingRange to default capabilities
-        capabilities.textDocument.foldingRange = {
-          dynamicRegistration = false,
-          lineFoldingOnly = true,
-        }
         require("lspconfig")[server_name].setup({
           capabilities = capabilities,
           handlers = {
