@@ -45,22 +45,6 @@ return {
         { ";s", "<cmd>BufferLinePick<CR>",                                                       description = "Buffer: Pick a Buffer" },
 
         {
-          '<leader>ms',
-          function() if toolbox.is_visual_mode() then core_utils.execute_command(":S/.*//g<Left><Left><Left><Left><Left>")
-            else core_utils.execute_command(":%S/.*//g<Left><Left><Left><Left><Left>") end end,
-          mode = { 'n', 'v' },
-                                                                                                 description = 'Substitute Everything After `foo`',
-        },
-
-        {
-          "<leader>mn",
-          function() if toolbox.is_visual_mode() then core_utils.execute_command(":Norm ")
-            else core_utils.execute_command(":%Norm ") end end,
-          mode = { "n", "v" },
-                                                                                                 description = "Run Normal mode on lines containing `foo`",
-        },
-
-        {
           "<leader>mp",
           "<cmd>silent execute '!echo -n ' .. shellescape(expand('%:p')) .. ' | wl-copy'<CR>",
                                                                                                  description = 'Get current buffer full path',
@@ -76,7 +60,6 @@ return {
         { "<C-x>", function() require("dial.map").manipulate("decrement", "normal") end,         description = "Decrement" },
         { "<C-f>", function() require("nvim-tree.api").tree.toggle({ find_file = true }) end,    description = "Tree: Toggle With Focused File" },
         { "<C-g>", function() core_utils.find_files_from_project_git_root() end,                 description = "Telescope: Find Files" },
-        -- { "<C-p>", "<cmd>Legendary<CR>",                                                      description = "Legendary Command Palette", mode = { "n", "x" } },
         {
           '<C-p>',
           function()

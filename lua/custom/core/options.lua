@@ -17,7 +17,7 @@ opt.swapfile         = false                       -- Don't use swapfile
 opt.completeopt      = 'menuone,noinsert,noselect' -- Autocomplete options
 opt.confirm          = true
 opt.autowriteall     = true
-opt.timeoutlen       = 400                         -- time to wait for a mapped sequence to complete
+opt.timeoutlen       = 600                         -- time to wait for a mapped sequence to complete
 opt.writebackup      = true                        -- disable editing a file that is being edited
 opt.undofile         = true                        -- Save undo history
 opt.inccommand       = 'split'                     -- Preview substitutions live
@@ -87,7 +87,7 @@ opt.tabstop     = 2      -- 1 tab == 2 spaces
 opt.hidden     = true     -- enable background buffers
 opt.lazyredraw = false    -- `nzzzv` search result works
 -- opt.synmaxcol  = 500      -- max column for syntax highlight
-opt.updatetime = 200      -- ms to wait for trigger an event
+opt.updatetime = 50      -- ms to wait for trigger an event
 -- interval for writing swap file to disk, also used by gitsigns
 
 -----------------------------------------------------------
