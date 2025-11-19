@@ -183,6 +183,14 @@ return {
           filters = { ft = "qf", "Trouble" },
         },
 
+        -- ╭─────────────────────────────────────────────────────────╮
+        -- │ Neorg                                                   │
+        -- ╰─────────────────────────────────────────────────────────╯
+        { "<leader>nt", "<cmd>Neorg journal today<CR>",                     description = "Neorg: today" },
+        { "<leader>np", "<cmd>Neorg journal custom<CR>",                    description = "Neorg: pick journal" },
+        { "<leader>nw", "<cmd>Neorg workspace work<CR>",                    description = "Neorg: work" },
+        { "<leader>nh", "<cmd>Neorg workspace home<CR>",                    description = "Neorg: home" },
+
         -- ╭──────────────────────────────────────────────────────────╮
         -- │ bufferline                                               │
         -- ╰──────────────────────────────────────────────────────────╯

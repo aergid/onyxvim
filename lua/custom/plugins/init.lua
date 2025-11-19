@@ -4,9 +4,37 @@ require("lze").load({
   -- { import = "custom.plugins.completion.blink" },
   { import = "custom.plugins.completion.cmp" },
   { import = "custom.plugins.completion.luasnip" },
-      {
+  {
     "vim-go",
-    ft = {"go"}
+    ft = { "go" },
+  },
+  -- TODO configure lazy load neorg
+  {
+    "neorg-telescope",
+    lazy = false,
+    dep_of = { "neorg" },
+  },
+  {
+    "neorg",
+    lazy = false,
+    after = function(plugin)
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {},
+          ["core.concealer"] = {},
+          ["core.integrations.telescope"] = {},
+          ["core.dirman"] = {
+            config = {
+              workspaces = {
+                home = "~/Notes/home",
+                work = "~/Notes/work/",
+              },
+              default_workspace = "home",
+            },
+          },
+        },
+      })
+    end,
   },
 
   { import = "custom.plugins.lsp.lspconfig" },

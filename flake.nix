@@ -163,6 +163,7 @@
             debug = true;
             # blink = false;
             cmp = true;
+            org = true;
             treesitter = true;
             telescope = true;
             navigation = true;
@@ -209,6 +210,7 @@
             debug = true;
             blink = false;
             cmp = true;
+            org = true;
             treesitter = true;
             telescope = true;
             navigation = true;

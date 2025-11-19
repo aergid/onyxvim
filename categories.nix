@@ -199,6 +199,10 @@ in { pkgs, settings, categories, name, extra, mkNvimPlugin, ... }@packageDef: {
       vim-illuminate
       vim-matchup
     ];
+    org = with pkgs.vimPlugins; [
+        neorg
+        neorg-telescope
+      ];
 
     telescope = with pkgs.vimPlugins; [
       telescope-nvim
