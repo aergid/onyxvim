@@ -155,7 +155,7 @@ in { pkgs, settings, categories, name, extra, mkNvimPlugin, ... }@packageDef: {
       SQL = [ vim-dadbod vim-dadbod-ui vim-dadbod-completion ];
       C = [ vim-cmake clangd_extensions-nvim ];
       python = [ nvim-dap-python ];
-      go = [ nvim-dap-go ];
+      go = [ nvim-dap-go vim-go ];
       java = [ nvim-jdtls ];
       markdown = [ render-markdown-nvim markdown-preview-nvim ];
     };

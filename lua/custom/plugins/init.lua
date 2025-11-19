@@ -4,6 +4,10 @@ require("lze").load({
   -- { import = "custom.plugins.completion.blink" },
   { import = "custom.plugins.completion.cmp" },
   { import = "custom.plugins.completion.luasnip" },
+      {
+    "vim-go",
+    ft = {"go"}
+  },
 
   { import = "custom.plugins.lsp.lspconfig" },
   { import = "custom.plugins.lsp.lspsaga" },
