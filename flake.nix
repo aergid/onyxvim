@@ -162,7 +162,7 @@
             dev = true;
             ai = true;
             debug = true;
-            blink = false;
+            # blink = false;
             cmp = true;
             treesitter = true;
             telescope = true;

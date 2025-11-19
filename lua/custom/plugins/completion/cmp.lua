@@ -47,8 +47,9 @@ return {
   },
   {
     "nvim-cmp",
-    event = { "DeferredUIEnter" },
-    on_require = { "cmp" },
+    -- event = { "DeferredUIEnter" },
+    -- on_require = { "cmp" },
+    -- load = require('nixCatsUtils').make_load_with_after({ 'cmp' }),
     after = function(plugin)
       local cmp = require("cmp")
       local types = require("cmp.types")

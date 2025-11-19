@@ -1,8 +1,8 @@
 require("lze").load({
   { import = "custom.plugins.neotest" },
 
-  { import = "custom.plugins.completion.blink" },
-  -- { import = "custom.plugins.completion.cmp" },
+  -- { import = "custom.plugins.completion.blink" },
+  { import = "custom.plugins.completion.cmp" },
   { import = "custom.plugins.completion.luasnip" },
 
   { import = "custom.plugins.lsp.lspconfig" },
