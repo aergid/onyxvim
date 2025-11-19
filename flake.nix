@@ -4,6 +4,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     # see :help nixCats.flake.inputs
     # If you want your plugin to be loaded by the standard overlay,
@@ -118,23 +119,21 @@
       # in a set of ${system}, or simply a list.
       # the nixCats builder function will accept either.
       # see :help nixCats.flake.outputs.overlays
-      dependencyOverlays =
-        # (import ./overlays inputs) ++
-        [
-          # This overlay grabs all the inputs named in the format
-          # `plugins-<pluginName>`
-          # Once we add this overlay to our nixpkgs, we are able to
-          # use `pkgs.neovimPlugins`, which is a set of our plugins.
-          (utils.standardPluginOverlay inputs)
-          # add any other flake overlays here.
+      dependencyOverlays = (import ./nix/overlays inputs) ++ [
+        # This overlay grabs all the inputs named in the format
+        # `plugins-<pluginName>`
+        # Once we add this overlay to our nixpkgs, we are able to
+        # use `pkgs.neovimPlugins`, which is a set of our plugins.
+        (utils.standardPluginOverlay inputs)
+        # add any other flake overlays here.
 
-          # when other people mess up their overlays by wrapping them with system,
-          # you may instead call this function on their overlay.
-          # it will check if it has the system in the set, and if so return the desired overlay
-          # (utils.fixSystemizedOverlay inputs.codeium.overlays
-          #   (system: inputs.codeium.overlays.${system}.default)
-          # )
-        ];
+        # when other people mess up their overlays by wrapping them with system,
+        # you may instead call this function on their overlay.
+        # it will check if it has the system in the set, and if so return the desired overlay
+        # (utils.fixSystemizedOverlay inputs.codeium.overlays
+        #   (system: inputs.codeium.overlays.${system}.default)
+        # )
+      ];
 
       # :help nixCats.flake.outputs.categories
       # :help nixCats.flake.outputs.categoryDefinitions.scheme

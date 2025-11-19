@@ -152,6 +152,7 @@ return {
             name = "nvim_lsp_signature_help",
             priority = 500,
           },
+          { name = "neorg" },
         },
         performance = {
           -- fetching_timeout = 2000, -- slower response speed of LLMs

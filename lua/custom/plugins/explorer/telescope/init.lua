@@ -5,6 +5,7 @@ return {
 
   {
     "telescope.nvim",
+    dep_of = { "neorg" },
     lazy = false,
     after = function(plugin)
       local actions = require("telescope.actions")

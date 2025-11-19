@@ -1,6 +1,12 @@
 return {
   {
     "nvim-treesitter",
+    --     for_cat = "general.core",
+    -- -- cmd = { "" },
+    -- event = "DeferredUIEnter",
+    -- dep_of = { "treesj", "otter.nvim", "codecompanion.nvim", "render-markdown", "neorg" },
+    dep_of = { "neorg" },
+
     lazy = false,
     after = function(plugin)
       require("nvim-treesitter.configs").setup({
