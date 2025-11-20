@@ -6,14 +6,23 @@ return {
       require("marks").setup({
         default_mappings = false,
         mappings = {
-          set_next = "",
-          next = "",
-          prev = "",
           delete_line = "mx",
           delete_buf = "mX",
+          -- set_next = false,
+          -- toggle = false,
+          next = "m]",
+          prev = "m[",
+          preview = "m:",
+          -- set = false,
+          -- delete = false,
+          -- set_bookmark = false,
+          -- delete_bookmark = false,
+          -- next_bookmark = false,
+          -- prev_bookmark = false,
+          -- annotate = false,
         },
         -- whether cycle back to the beginning/end of buffer
-        cyclic = false,
+        cyclic = true,
         -- Bookmarks can be used to group together positions and quickly move
         -- across multiple buffers. default sign is '!@#$%^&*()' (from 0 to 9), and
         -- default virt_text is "".
@@ -27,9 +36,9 @@ return {
 
       -- disable distracting highlights
       vim.cmd([[
-    highlight MarkSignHL guibg=NONE guifg=NONE
-    highlight MarkSignNumHL guibg=NONE guifg=NONE
-    highlight MarkVirtTextHL guibg=NONE guifg=NONE
+        highlight MarkSignHL guibg=NONE guifg=NONE
+        highlight MarkSignNumHL guibg=NONE guifg=NONE
+        highlight MarkVirtTextHL guibg=NONE guifg=NONE
     ]])
     end,
   },
