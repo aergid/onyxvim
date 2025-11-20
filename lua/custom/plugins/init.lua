@@ -102,7 +102,6 @@ require("lze").load({
   { import = "custom.plugins.navigation.tmux" },
   { import = "custom.plugins.navigation.leap" },
   { import = "custom.plugins.navigation.flash" },
-  { import = "custom.plugins.navigation.hop" },
   { import = "custom.plugins.navigation.nap" },
 
   { import = "custom.plugins.explorer.telescope" },

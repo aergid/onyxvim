@@ -16,12 +16,11 @@ return {
       vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
 
       -- Remote operations at a distance
-      vim.keymap.set({ "n", "o" }, "r", function()
+      vim.keymap.set({ "n", "o" }, "R", function()
         require("leap.remote").action()
       end)
 
       vim.api.nvim_set_hl(0, "LeapLabel", { fg = "#000000", bg = "#CCFF88", bold = true })
-
     end,
   },
 }

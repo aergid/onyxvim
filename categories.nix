@@ -224,7 +224,6 @@ in { pkgs, settings, categories, name, extra, mkNvimPlugin, ... }@packageDef: {
     navigation = with pkgs.vimPlugins; [
       flash-nvim
       tmux-nvim
-      hop-nvim
       leap-nvim
       pkgs.neovimPlugins.nap
     ];
