@@ -99,7 +99,7 @@ return {
           description = "Telescope: Find Text in Opened Tabs",
         },
         {
-          '<leader>fb',
+          '<leader>fc',
           function()
             if toolbox.is_visual_mode() then
               require("telescope.builtin").current_buffer_fuzzy_find({ default_text = core_utils.get_visual_selection() })
@@ -119,7 +119,7 @@ return {
         -- not frequent below
         { "<leader>ff", function() require("telescope.builtin").find_files() end,         description = "Telescope: Find Files in Current Directory" },
         { "<leader>fr", function() require("telescope.builtin").resume() end,             description = "Telescope: Resume" },
-        -- { "<leader>fB", function() vim.cmd("Telescope scope buffers") end,               description = "Telescope: Tabs" },
+        { "<leader>fb", function() vim.cmd("Telescope scope buffers") end,                description = "Telescope: Tabs" },
         -- { "<leader>fd", function() vim.cmd("Telescope frecency workspace=CWD") end,      description = "Telescope: Find Frecency" },
         { "<leader>fj", function() require("telescope.builtin").jumplist() end,           description = "Telescope: Jumplist" },
         { "<leader>fXc", function() require("telescope.builtin").command_history() end,   description = "Telescope: Command History" },
