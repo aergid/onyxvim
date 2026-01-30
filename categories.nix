@@ -145,6 +145,7 @@ in { pkgs, settings, categories, name, extra, mkNvimPlugin, ... }@packageDef: {
         plenary-nvim
         vim-repeat
       ];
+      markdown = [ pkgs.neovimPlugins.d2-vim ];
       lsp = [ SchemaStore-nvim ];
       mass_find_and_replace = { spectre = [ nvim-spectre ]; };
     };
@@ -157,7 +158,10 @@ in { pkgs, settings, categories, name, extra, mkNvimPlugin, ... }@packageDef: {
       python = [ nvim-dap-python ];
       go = [ nvim-dap-go vim-go ];
       java = [ nvim-jdtls ];
-      markdown = [ render-markdown-nvim markdown-preview-nvim ];
+      markdown = [
+        render-markdown-nvim
+        markdown-preview-nvim
+      ];
     };
     ai = {
       avante = [ avante-nvim ];
@@ -199,10 +203,7 @@ in { pkgs, settings, categories, name, extra, mkNvimPlugin, ... }@packageDef: {
       vim-illuminate
       vim-matchup
     ];
-    org = with pkgs.vimPlugins; [
-        neorg
-        neorg-telescope
-      ];
+    org = with pkgs.vimPlugins; [ neorg neorg-telescope ];
 
     telescope = with pkgs.vimPlugins; [
       telescope-nvim

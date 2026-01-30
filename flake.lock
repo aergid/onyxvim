@@ -303,6 +303,22 @@
         "type": "github"
       }
     },
+    "plugins-d2-vim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1755566748,
+        "narHash": "sha256-HmDQfOIoSV93wqRe7O4FPuHEmAxwoP1+Ut+sKhB62jA=",
+        "owner": "terrastruct",
+        "repo": "d2-vim",
+        "rev": "cb3eb7fcb1a2d45c4304bf2e91077d787b724a39",
+        "type": "github"
+      },
+      "original": {
+        "owner": "terrastruct",
+        "repo": "d2-vim",
+        "type": "github"
+      }
+    },
     "plugins-hlargs": {
       "flake": false,
       "locked": {
@@ -487,6 +503,7 @@
         "plugins-code_runner": "plugins-code_runner",
         "plugins-codecompanion": "plugins-codecompanion",
         "plugins-cutlass": "plugins-cutlass",
+        "plugins-d2-vim": "plugins-d2-vim",
         "plugins-hlargs": "plugins-hlargs",
         "plugins-incline": "plugins-incline",
         "plugins-jq-playground": "plugins-jq-playground",

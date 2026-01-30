@@ -27,6 +27,11 @@
       flake = false;
     };
 
+    "plugins-d2-vim" = {
+      url = "github:terrastruct/d2-vim";
+      flake = false;
+    };
+
     "plugins-nvim-tree-preview" = {
       url = "github:b0o/nvim-tree-preview.lua";
       flake = false;
@@ -158,9 +163,10 @@
             tools = true;
             startup = true;
             optional = true;
-            dev = true;
             ai = true;
             debug = true;
+            dev = true;
+            markdown = true;
             # blink = false;
             cmp = true;
             org = true;
@@ -196,53 +202,6 @@
             # but you can pass all the same stuff in any of these sets and access it in lua
             nixdExtras = { nixpkgs = nixpkgs; };
           };
-        };
-
-        regularCats = { pkgs, ... }@misc: {
-          categories = {
-            runtime = true;
-            lsp = true;
-            tools = true;
-            startup = true;
-            optional = true;
-            dev = true;
-            ai = true;
-            debug = true;
-            blink = false;
-            cmp = true;
-            org = true;
-            treesitter = true;
-            telescope = true;
-            navigation = true;
-            git = true;
-            explorer = true;
-            filetypes = true;
-            persistence = true;
-            ui = true;
-            lib = true;
-            utils = true;
-            other = true;
-            test = true;
-          };
-          settings = {
-            # IMPURE PACKAGE: normal config reload
-            # include same categories as main config,
-            # will load from vim.fn.stdpath('config')
-            wrapRc = false;
-            # or tell it some other place to load
-            # unwrappedCfgPath = "/some/path/to/your/config";
-
-            # configDirName: will now look for nixCats-nvim within .config and .local and others
-            # this can be changed so that you can choose which ones share data folders for auths
-            # :h $NVIM_APPNAME
-            configDirName = "onyxnvim";
-
-            aliases = [ ];
-
-            # If you wanted nightly, uncomment this, and the flake input.
-            # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
-          };
-          extra = { nixdExtras = { nixpkgs = nixpkgs; }; };
         };
       };
 
